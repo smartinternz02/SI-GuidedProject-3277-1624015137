@@ -6,7 +6,7 @@ import re
 import requests
 import pandas as pd
 import json
-# from gevent.pywsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 import os
 
 #initializing the flask app
@@ -66,6 +66,6 @@ def y_predict():
 if __name__ == "__main__":
     port = os.getenv('VCAP_APP_PORT','8080')
     app.secret_key=os.urandom(12)
-    # app.run(debug=True,port=port,host='0.0.0.0')
-    app.run(debug=True)
+    app.run(debug=True,port=port,host='0.0.0.0')
+    # app.run(debug=True)
     
