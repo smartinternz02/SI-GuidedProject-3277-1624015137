@@ -1,0 +1,7 @@
+---
+applications:
+ - name: news_tracker
+   memory: 128M
+   disk_quota: 1G
+   random-route: true
+---

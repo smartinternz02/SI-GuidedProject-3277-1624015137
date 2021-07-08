@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News Tracker</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link href="{{ url_for('static', filename='css/final.css') }}" rel="stylesheet"> 
+<style>
+.header {	
+			top:0;	
+			margin:0px;
+			left: 0px;
+			right: 0px;
+			position: fixed;
+			background-color: #28272c;
+			color: white;
+			box-shadow: 0px 8px 4px grey;
+			overflow: hidden;
+			padding-left:20px;
+			font-family: 'Josefin Sans';
+			font-size: 2vw;
+			width: 100%;
+			height:8%;
+			text-align: center;
+		}
+
+body {
+
+  background-color:#ffffff;
+  background-position: 0px 0px;
+  }
+
+.container {
+  margin-top:40px;
+  padding: 16px;
+}
+#inp{ 
+	width: 40%; 
+	margin-bottom: 10px; 
+	background: rgba(255,255,255,255);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #000000;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+
+table, th, td {
+  
+}
+th, td {
+  padding: 15px;
+}
+
+  
+</style>
+</head>
+
+<body style="font-family:Montserrat;overflow:scroll;">
+
+<div class="header">    
+ <div style="width:100%;float:left;font-size:2vw;text-align:middle;color:white; padding-top:0.5%;padding-left:0%;">News Tracker</div>
+
+</div>
+<div style="padding-top:5%;padding-left:5%;padding-right:5%;text-align:justify;">
+<span style="font-size:25px;line-height:60px;"><b>Track the News and Stay Updated!!</b><br></span>
+			 As the lives are very busy these days, we often feel we need more than 24 hrs a day to cope up with everything we have in our schedule. Well, that's not possible but reducing time by changing the convetional method of reading news can help. Just tell us what market news you're interested in and get a quick peek for the day. Only read what you feel relevant and save your time. This app helps you to query for all information about Indices, Commodities, Currencies, Futures, Rates, Bonds, etc… as on official websites.
+			 <br><br>
+			 <form action = "{{url_for('y_predict')}}" method="post">
+				<center><select name="news1" id="inp">
+					  <option value="select" selected>Select news type</option>
+					  <option value="COMMODITY">Commodity</option>
+					  <option value="CURRENCY">Currency</option>
+					  <option value="INDEX">Index</option>
+					  <option value="INDEXFUTURE">Index Future</option>
+					  <option value="RATE">Rate</option>
+					  <option value="STOCK">Stock</option>
+				</select><br><br>
+				<input type="submit" value="Get the News!!" style="background: #384b59;color:#fff;width:20%;"></center>
+			</form>
+
+</div>
+<br>
+<br>
+<div>
+<span style="font-size:25px;font-weight:bold;"><center>{{main}}</center></span><br>
+<table>
+
+<tr>
+<td>
+<a href={{src1}} target="_blank" style="text-decoration:none;font-weight:bold;color:black;"><img src={{img1}} width="100%" >{{data1}}</a>
+</td>
+<td>
+<a href={{src2}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img2}} width="100%" >{{data2}}</a>
+</td>
+<td>
+<a href={{src3}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img3}} width="100%" >{{data3}}</a>
+</td>
+<td>
+<a href={{src4}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img4}} width="100%" >{{data4}}</a>
+</td>
+<td>
+<a href={{src5}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img5}} width="100%" >{{data5}}</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href={{src6}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img6}} width="100%" >{{data6}}</a>
+</td>
+<td>
+<a href={{src7}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img7}} width="100%" >{{data7}}</a>
+</td>
+<td>
+<a href={{src8}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img8}} width="100%" >{{data8}}</a>
+</td>
+<td>
+<a href={{src9}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img9}} width="100%" >{{data9}}</a>
+</td>
+<td>
+<a href={{src10}} target="_blank"style="text-decoration:none;font-weight:bold;color:black;"><img src={{img10}} width="100%" >{{data10}}</a>
+</td>
+</tr>
+
+
+
+</table>
+</div>
+
+</body>
+
+</html>
